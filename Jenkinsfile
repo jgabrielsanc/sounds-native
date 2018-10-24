@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'echo ${http.proxyHost}'
+        sh '''echo ${BUILD_ID}
+echo ${http.proxyHost}'''
         sh './gradlew clean build'
       }
     }
