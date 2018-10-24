@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'echo $PATH'
-        sh 'gradle clean build'
+        sh './gradlew clean build'
       }
     }
   }
