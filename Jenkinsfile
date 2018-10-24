@@ -4,7 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         sh '''echo ${http}
-echo ${port}'''
+echo ${port}
+docker -v'''
         sh './gradlew -Dhttp.proxyHost=${http}  -Dhttp.proxyPort=${port} -Dhttps.proxyHost=${http} -Dhttps.proxyPort=${port} clean build'
       }
     }
@@ -15,7 +16,7 @@ echo ${port}'''
             echo 'Test succes'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'Succes 2'
           }
