@@ -7,9 +7,9 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('Build') {
       steps {
-        sh '.gradlew clean build'
+        echo 'Jenkins test'
       }
     }
   }
