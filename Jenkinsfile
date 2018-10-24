@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh '''echo ${http}
 echo ${port}'''
-        sh './gradlew -Dhttp.proxyHost=${http}  -Dhttp.proxyPort=${port} clean build'
+        sh './gradlew -Dhttp.proxyHost=${http}  -Dhttp.proxyPort=${port} -Dhttps.proxyHost=${http} -Dhttps.proxyPort=${port} clean build'
       }
     }
   }
